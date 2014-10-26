@@ -7,7 +7,7 @@ makeCacheMatrix <- function(x = matrix()) {
   ## Initialize inverse object 
   m <- NULL
   
-  ## Methord to set the matrics
+  ## Methord to set the matrix
   set <- function(y){
     x <<- y
     m <<- NULL

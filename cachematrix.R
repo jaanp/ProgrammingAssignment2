@@ -1,33 +1,33 @@
 ## Function returning the inverse matrix of a nonsingular matrix
 
-## makeCacheMatrix returns a function list that would be used in cacheSolve
+## makeCacheMatrix returns a function list that will be used by cacheSolve
 
 makeCacheMatrix <- function(x = matrix()) {
   
-  ## initialize inverse object 
+  ## Initialize inverse object 
   m <- NULL
   
-  ## check is the matrix already exists
+  ## Methord to set the matrics
   set <- function(y){
     x <<- y
     m <<- NULL
   }
-  # return the object from higher level scope
+  # Method to return the matrix from higher level scope
   get <- function(){
     x
   }
   
-  ## set the inverse in higher level
+  ## Method to set the inverse matrix in higher level
   setInverse <- function(inverse){
     m <<- inverse
   }
   
-  ## get the inverse from higher level
+  ## Method to get the inverse matrix from higher level
   getInverse <- function(){
     m
   } 
   
-  ## combine the four functions into a list variable as an output
+  ## Combine the four functions into a list variable as an output
   list(set = set,
        get = get,
        setInverse = setInverse,
@@ -35,8 +35,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve function is for getting the inverse matric from the cache if it exist, or create one
-## and store the inverse matrix in it if cache does not exist.
+## cacheSolve function is for getting the inverse matric from the cache if it exist, or creating one
+## and storing the inverse matrix in it if cache does not exist.
 
 cacheSolve <- function(x, ...) {
 
